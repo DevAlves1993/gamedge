@@ -14,26 +14,14 @@
  * limitations under the License.
  */
 
-package com.paulrybitskyi.gamedge.gamespot.api.articles.serialization
+package com.paulrybitskyi.gamedge.commons.api
 
-import com.paulrybitskyi.gamedge.gamespot.api.articles.entities.ImageType
-import com.paulrybitskyi.gamedge.gamespot.api.articles.entities.ImageType.Companion.asImageType
-import com.squareup.moshi.FromJson
-import com.squareup.moshi.ToJson
-
-internal class ImageTypeAdapter {
+import com.jakewharton.retrofit2.converter.kotlinx.serialization.asConverterFactory
+import kotlinx.serialization.json.Json
+import okhttp3.MediaType.Companion.toMediaType
+import retrofit2.Converter
 
 
-    @FromJson
-    fun fromJson(imageType: String): ImageType {
-        return imageType.asImageType()
-    }
-
-
-    @ToJson
-    fun toJson(imageType: ImageType): String {
-        return imageType.value
-    }
-
-
+fun Json.asConverterFactory(): Converter.Factory {
+    return asConverterFactory("application/json".toMediaType())
 }

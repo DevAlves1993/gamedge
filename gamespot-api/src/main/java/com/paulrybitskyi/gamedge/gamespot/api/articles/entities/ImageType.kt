@@ -16,23 +16,15 @@
 
 package com.paulrybitskyi.gamedge.gamespot.api.articles.entities
 
-internal enum class ImageType(val value: String) {
+import kotlinx.serialization.SerialName
+import kotlinx.serialization.Serializable
 
+@Serializable
+internal enum class ImageType {
 
-    UNKNOWN("unknown"),
-    SQUARE_TINY("square_tiny"),
-    SQUARE_SMALL("square_small"),
-    SCREEN_TINY("screen_tiny"),
-    ORIGINAL("original");
-
-
-    internal companion object {
-
-        fun String.asImageType(): ImageType {
-            return values().find { it.value == this } ?: UNKNOWN
-        }
-
-    }
-
+    @SerialName("square_tiny") SQUARE_TINY,
+    @SerialName("square_small") SQUARE_SMALL,
+    @SerialName("screen_tiny") SCREEN_TINY,
+    @SerialName("original") ORIGINAL
 
 }

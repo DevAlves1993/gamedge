@@ -18,6 +18,7 @@ plugins {
     androidLibrary()
     gamedgeAndroid()
     kotlinKapt()
+    kotlinxSerialization()
 }
 
 android {
@@ -34,14 +35,13 @@ android {
     }
 }
 
-
-
 dependencies {
     implementation(project(deps.local.data))
     implementation(project(deps.local.commonsData))
     implementation(project(deps.local.core))
 
     implementation(deps.kotlin.coroutines)
+    implementation(deps.kotlin.serialization)
 
     implementation(deps.square.moshi)
 

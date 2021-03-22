@@ -21,6 +21,7 @@ plugins {
     androidLibrary()
     gamedgeAndroid()
     kotlinKapt()
+    kotlinxSerialization()
     daggerHiltAndroid() // does not compile instrumented tests without the plugin
 }
 
@@ -50,6 +51,7 @@ dependencies {
     implementation(project(deps.local.core))
 
     implementation(deps.kotlin.coroutines)
+    implementation(deps.kotlin.serialization)
 
     implementation(deps.square.retrofit)
     implementation(deps.square.retrofitMoshiConverter)

@@ -20,7 +20,7 @@ import com.paulrybitskyi.gamedge.commons.api.ErrorMessageExtractor
 import com.paulrybitskyi.gamedge.commons.api.addInterceptorAsFirstInChain
 import com.paulrybitskyi.gamedge.commons.api.calladapter.ApiResultCallAdapterFactory
 import com.paulrybitskyi.gamedge.gamespot.api.commons.*
-import com.paulrybitskyi.gamedge.gamespot.api.commons.GamespotFieldsSerializer
+import com.paulrybitskyi.gamedge.gamespot.api.commons.serialization.GamespotFieldsSerializer
 import com.paulrybitskyi.gamedge.gamespot.api.commons.GamespotQueryParamsFactory
 import com.paulrybitskyi.gamedge.gamespot.api.commons.GamespotQueryParamsFactoryImpl
 import com.paulrybitskyi.gamedge.gamespot.api.commons.UserAgentInterceptor

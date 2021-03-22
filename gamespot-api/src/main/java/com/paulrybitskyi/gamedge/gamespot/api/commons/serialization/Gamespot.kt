@@ -14,23 +14,8 @@
  * limitations under the License.
  */
 
-package com.paulrybitskyi.gamedge.gamespot.api.commons
+package com.paulrybitskyi.gamedge.gamespot.api.commons.serialization
 
-import kotlinx.serialization.SerialName
-import kotlinx.serialization.Serializable
-
-@Serializable
-internal data class Response<T : Any>(
-    @SerialName(Schema.RESULTS)
-    val results: List<T> = emptyList()
-) {
-
-
-    object Schema {
-
-        const val RESULTS = "results"
-
-    }
-
-
-}
+@Target(AnnotationTarget.FIELD)
+@Retention(AnnotationRetention.RUNTIME)
+annotation class Gamespot(val value: String)
