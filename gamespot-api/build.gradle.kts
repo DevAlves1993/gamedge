@@ -72,9 +72,6 @@ dependencies {
     testImplementation(deps.testing.assertJ)
     testImplementation(deps.testing.mockk)
     testImplementation(deps.testing.coroutines)
-    // Needed to test a simple json parsing functionality
-    // because by default org.json classes need to mocked
-    testImplementation(deps.testing.orgJson)
 
     androidTestImplementation(project(deps.local.commonsTesting))
     androidTestImplementation(deps.testing.testRunner)
