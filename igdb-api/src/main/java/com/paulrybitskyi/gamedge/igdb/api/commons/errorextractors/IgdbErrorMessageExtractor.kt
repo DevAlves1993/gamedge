@@ -23,7 +23,7 @@ import org.json.JSONArray
 import javax.inject.Inject
 
 
-private const val ERROR_MESSAGE_NAME = "cause"
+private const val ERROR_MESSAGE_NAME = "title"
 
 
 @BindType(withQualifier = true)

@@ -16,15 +16,55 @@
 
 package com.paulrybitskyi.gamedge.gamespot.api.articles.entities
 
-import kotlinx.serialization.SerialName
+import com.paulrybitskyi.gamedge.gamespot.api.articles.entities.ImageType.Companion.asImageType
+import kotlinx.serialization.KSerializer
 import kotlinx.serialization.Serializable
+import kotlinx.serialization.descriptors.PrimitiveKind
+import kotlinx.serialization.descriptors.PrimitiveSerialDescriptor
+import kotlinx.serialization.encoding.Decoder
+import kotlinx.serialization.encoding.Encoder
 
-@Serializable
-internal enum class ImageType {
 
-    @SerialName("square_tiny") SQUARE_TINY,
-    @SerialName("square_small") SQUARE_SMALL,
-    @SerialName("screen_tiny") SCREEN_TINY,
-    @SerialName("original") ORIGINAL
+@Serializable(with = ImageTypeSerializer::class)
+internal enum class ImageType(val rawType: String) {
+
+
+    UNKNOWN("unknown"),
+    SQUARE_TINY("square_tiny"),
+    SQUARE_SMALL("square_small"),
+    SCREEN_TINY("screen_tiny"),
+    ORIGINAL("original");
+
+
+    internal companion object {
+
+        fun String.asImageType(): ImageType {
+            return values().find { it.rawType == this } ?: UNKNOWN
+        }
+
+    }
+
+
+}
+
+
+internal object ImageTypeSerializer : KSerializer<ImageType> {
+
+
+    override val descriptor = PrimitiveSerialDescriptor(
+        checkNotNull(ImageTypeSerializer::class.qualifiedName),
+        PrimitiveKind.STRING
+    )
+
+
+    override fun serialize(encoder: Encoder, value: ImageType) {
+        encoder.encodeString(value.rawType)
+    }
+
+
+    override fun deserialize(decoder: Decoder): ImageType {
+        return decoder.decodeString().asImageType()
+    }
+
 
 }

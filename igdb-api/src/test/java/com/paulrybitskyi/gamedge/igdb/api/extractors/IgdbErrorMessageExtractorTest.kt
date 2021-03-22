@@ -46,7 +46,7 @@ internal class IgdbErrorMessageExtractorTest {
             ]
         """.trimIndent()
 
-        assertThat(SUT.extract(responseBody)).isEqualTo("Missing `;` at end of query")
+        assertThat(SUT.extract(responseBody)).isEqualTo("Syntax Error")
     }
 
 
@@ -62,7 +62,7 @@ internal class IgdbErrorMessageExtractorTest {
         val responseBody = """
             [
               {
-                "title": "Syntax Error",
+                "cause": "Syntax Error",
                 "status": 400
               }
             ]

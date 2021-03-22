@@ -54,13 +54,9 @@ dependencies {
     implementation(deps.kotlin.serialization)
 
     implementation(deps.square.retrofit)
-    implementation(deps.square.retrofitMoshiConverter)
     implementation(deps.square.retrofitScalarsConverter)
 
     implementation(deps.misc.kotlinResult)
-
-    implementation(deps.square.moshi)
-    kapt(deps.square.moshiCodeGenerator)
 
     implementation(deps.google.daggerHilt)
     kapt(deps.google.daggerHiltCompiler)

@@ -52,7 +52,7 @@ internal class GamesRefreshingThrottlerImpl @Inject constructor(
 
     private companion object {
 
-        val DEFAULT_GAMES_REFRESH_TIMEOUT = TimeUnit.MINUTES.toMillis(10L)
+        val DEFAULT_GAMES_REFRESH_TIMEOUT = TimeUnit.MILLISECONDS.toMillis(1L)
         val COMPANY_DEVELOPED_GAMES_REFRESH_TIMEOUT = TimeUnit.DAYS.toMillis(7L)
         val SIMILAR_GAMES_REFRESH_TIMEOUT = TimeUnit.DAYS.toMillis(7L)
 
